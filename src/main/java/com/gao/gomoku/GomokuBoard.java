@@ -55,7 +55,6 @@ public class GomokuBoard extends JFrame {
         g.fillRect(463,53,4,454);
         g.fillRect(13,503,454,4);
 
-        //标注点位
         g.fillOval(117, 157, 6, 6);
         g.fillOval(117, 397, 6, 6);
         g.fillOval(357, 397, 6, 6);
@@ -64,16 +63,13 @@ public class GomokuBoard extends JFrame {
 
 
 
-        //绘制棋子
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-                //黑子
                 if (cc.getValueAt(i,j) == 1) {
                     int tempX = i * 30 + 30;
                     int tempY = j * 30 + 70;
                     g.fillOval(tempX - 9, tempY - 9, 18, 18);
                 }
-                //白子
                 if (cc.getValueAt(i,j) == 2) {
                     int tempX = i * 30 + 30;
                     int tempY = j * 30 + 70;
@@ -104,7 +100,6 @@ public class GomokuBoard extends JFrame {
                     cc.refresh();
                     int x = e.getX();
                     int y = e.getY();
-                    //判断点击是否在棋盘内
                     if (x >= 15 && x < 465 && y >= 55 && y < 505) {
                         x = (x - 15) / 30;
                         y = (y - 55) / 30;
